@@ -1,3 +1,6 @@
+import Center from "../src/components/center/Center";
+import { ChakraProvider } from "@chakra-ui/react";
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -13,3 +16,7 @@ export const parameters = {
         : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
 };
+
+export const decorators = [
+  (Story) => <ChakraProvider>{<Story />}</ChakraProvider>,
+];
