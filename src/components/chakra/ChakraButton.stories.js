@@ -18,6 +18,7 @@ Success.args = {
   // Re-Assign the object to make our own stories
   colorScheme: "green",
   children: "Success",
+  //onClick: () => console.log("Button clicked", process.env.STORYBOOK_THEME),
 };
 
 export const Danger = Template.bind({});
