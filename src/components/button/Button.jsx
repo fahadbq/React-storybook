@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes, { oneOfType } from "prop-types";
 import "./Button.css";
 
 const Button = (props) => {
@@ -12,3 +13,13 @@ const Button = (props) => {
 };
 
 export default Button;
+
+Button.propTypes = {
+  variant: PropTypes.string,
+  children: PropTypes.oneOf(["Primary", "Secondary", "Success", "Danger"]),
+};
+
+Button.defaultProps = {
+  variant: "secondary",
+  children: "Primary",
+};
