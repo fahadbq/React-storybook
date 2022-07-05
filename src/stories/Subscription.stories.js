@@ -1,6 +1,6 @@
 import React from "react";
-import { Success } from "../button/Button.stories";
-import { Large } from "../input/Input.stories";
+import { Success } from "../stories/Button.stories";
+import { Large } from "../stories/Input.stories";
 
 export default {
   title: "form/Subscription",
