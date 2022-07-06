@@ -1,12 +1,12 @@
 import React from "react";
-import { GoogleLogin } from "../components/googleLogin/GoogleLogin";
+import { GoogleLoginPage } from "../components/googleLogin/GoogleLoginPage";
 
 export default {
   title: "form/GoogleLogin",
-  component: GoogleLogin,
+  component: GoogleLoginPage,
 };
 
-const Template = (args) => <GoogleLogin {...args} />;
+const Template = (args) => <GoogleLoginPage {...args} />;
 
 export const GoogleForm = Template.bind({});
 GoogleForm.args = {};
