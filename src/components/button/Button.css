@@ -23,3 +23,15 @@
 .danger {
   background-color: #f44336;
 }
+
+.small {
+  max-width: 60%;
+}
+
+.medium {
+  max-width: 80%;
+}
+
+.large {
+  max-width: 100%;
+}
