@@ -2,7 +2,7 @@ import React from "react";
 import { GoogleLoginPage } from "../components/googleLogin/GoogleLoginPage";
 
 export default {
-  title: "form/GoogleLogin",
+  title: "googlelogin/GoogleLogin",
   component: GoogleLoginPage,
 };
 
