@@ -1,13 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button } from "bootstrap";
+import { Button } from "../button/Button";
 import { Formik, Field, ErrorMessage, Form } from "formik";
 import * as Yup from "yup";
 
 export const FormikInput = ({ formTitle, labelBtn, ...props }) => {
+  const specialChar =
+    /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/;
+
   const validationSchema = Yup.object().shape({
     email: Yup.string().trim().required("Enter your email"),
-    password: Yup.string().trim().required("Password is required"),
+    password: Yup.string()
+      .trim()
+      .required("Password is required")
+      .matches(
+        specialChar,
+        "Password should include 1 special character, 1 Uppercase, 1 Lowercase and 1 number."
+      ),
   });
 
   return (
