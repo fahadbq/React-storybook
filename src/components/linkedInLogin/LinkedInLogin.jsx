@@ -3,25 +3,27 @@ import PropTypes from "prop-types";
 import { LinkedIn } from "react-linkedin-login-oauth2";
 import linkedIn from "react-linkedin-login-oauth2/assets/linkedin.png";
 
-export const LinkedInLoginPage = ({ cleintId, buttonText }) => {
+export const LinkedInLoginPage = ({
+  cleintId,
+  altText,
+  redirectUri,
+  onSuccess,
+  onError,
+}) => {
   console.log(cleintId);
   return (
     <div>
       <LinkedIn
         clientId={cleintId}
-        redirectUri={`${window.location.origin}/linkedin`}
-        onSuccess={(response) => {
-          console.log(response);
-        }}
-        onError={(error) => {
-          console.log(error);
-        }}
+        redirectUri={redirectUri}
+        onSuccess={onSuccess}
+        onError={onError}
       >
         {({ linkedInLogin }) => (
           <img
             onClick={linkedInLogin}
             src={linkedIn}
-            alt={buttonText}
+            alt={altText}
             style={{ maxWidth: "180px", cursor: "pointer" }}
           />
         )}
@@ -32,10 +34,16 @@ export const LinkedInLoginPage = ({ cleintId, buttonText }) => {
 
 LinkedInLoginPage.propTypes = {
   cleintId: PropTypes.string,
-  buttonText: PropTypes.string,
+  redirectUri: PropTypes.string,
+  onSuccess: PropTypes.func,
+  onError: PropTypes.func,
+  altText: PropTypes.string,
 };
 
 LinkedInLoginPage.defaultProps = {
   cleintId: "77g3pzlcq4qbhb",
-  buttonText: "Sign in with LinkedIn",
+  redirectUri: window.location.origin,
+  onSuccess: undefined,
+  onError: undefined,
+  altText: "Sign in with LinkedIn",
 };
